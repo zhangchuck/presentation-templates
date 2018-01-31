@@ -1,5 +1,12 @@
 # Presentation Templates
 
+The goal of having a presentation workflow is to:
+
+- build a new presentation very quickly using tools we're used to using anyways
+- rebuild quickly and automatically after adjusting tables/graphics (e.g., presentation as code)
+- iterate quickly on the aesthetics of the presentation without having
+slow build times (e.g., presentation as visual media)
+
 Initial Build
 -------------
 
@@ -24,13 +31,12 @@ Initial Build
 
 4. Place tables in a presentation
 
-- use `\\input{"./tables/[table].tex}`
+- use `\input{"./tables/[table].tex}`
 
 5. Proofread the presentation and make `\\resizebox{}{}` adjustments in step 3 to
 make sure the table/graphic fits properly.
 
 6. Build presentation and iterate until good.
-
 
 Additional Notes
 ================
@@ -90,7 +96,32 @@ and then in the body, we can use:
 Further Improvements
 ====================
 
-- Can we get a output-agnostic format?
+- Can we get an output-agnostic format?
     - output to HTML (for storing online)
     - output to PDF (for presenting in person/sending in emails?)
-- Add equation labelling and cross-references from Bookdown ([link](https://bookdown.org/yihui/bookdown/a-single-document.html))
+- Add equation labelling, cross-references and other improvements from Bookdown ([link](https://bookdown.org/yihui/bookdown/a-single-document.html))
+    - Using `pdf_book2()` and the Beamer template?
+- Can we improve `\begin{columns}` macros? (condense them?)
+- Make the setup more tolerant via [TinyTex](https://yihui.name/tinytex/)
+- Figure out a better Table format?
+    - [Pander](https://github.com/Rapporter/pander)
+- Can we make academic-y presentations in PureHTML?
+    - is it as portable (or convertible) to PDF
+    - what are the issues with this approach?
+        - Generic table generation (booktabs style)
+        - Regression table generation
+        - Graphics
+
+References
+==========
+
+- rticles
+- Steven V Miller
+- [Andrew Goldstone](https://andrewgoldstone.com/blog/2015/05/27/rmd-slides/)
+- [Getting similar behavior in two output formats](https://stackoverflow.com/questions/33226675/how-to-get-bm-to-work-in-an-r-markdown-to-html-file)
+- [Pandoc Manual](https://pandoc.org/MANUAL.html)
+- [Beamer Presentation Function](https://github.com/rstudio/rmarkdown/blob/master/R/beamer_presentation.R)
+- [Someone who did something similar](https://itsalocke.com/blog/custom-latex-beamer-style-templates-for-rmarkdown/) 
+- [Maybe useful](http://rmarkdown.rstudio.com/articles_beamer.html)
+- [Default Pandoc Beamer Template ](https://github.com/jgm/pandoc-templates/blob/ee2890c9dc20c5b0c33e1a5f3ea2d7705b4e591d/default.latex)
+- 
