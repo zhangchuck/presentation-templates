@@ -123,5 +123,5 @@ References
 - [Beamer Presentation Function](https://github.com/rstudio/rmarkdown/blob/master/R/beamer_presentation.R)
 - [Someone who did something similar](https://itsalocke.com/blog/custom-latex-beamer-style-templates-for-rmarkdown/) 
 - [Maybe useful](http://rmarkdown.rstudio.com/articles_beamer.html)
-- [Default Pandoc Beamer Template ](https://github.com/jgm/pandoc-templates/blob/ee2890c9dc20c5b0c33e1a5f3ea2d7705b4e591d/default.latex)
-- 
+- [Default Pandoc Beamer Template ](https://github.com/jgm/pandoc-templates/blob/ee2890c9dc20c5b0c33e1a5f3ea2d7705b4e591d/default.latex) which we might be able to use as a base format for bookdown::pdf_book2()
+- [Gincltex](https://ctan.org/pkg/gincltex?lang=en) allows authors to include .tex files as graphics, which would be useful to handle scaling funkiness.
