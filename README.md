@@ -14,9 +14,9 @@ Structuring a rmd presentation
 
 RMarkdown allows you to import other RMarkdown files:
 
+````
+```{r child="[#]_[section].Rmd", eval=T}
 ```
-\`\`\`{r child="[#]_[section].Rmd", eval=T}
-\`\`\`
-```
+````
 
 
