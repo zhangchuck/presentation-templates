@@ -1,0 +1,10 @@
+beamer_presentation:
+  theme: metropolis
+  fonttheme: metropolis
+  colortheme: spruce
+  toc: true
+  fig_width: 7
+  includes:
+    in_header: _cz_preamble.tex
+ioslides_presentation:
+    fig_width: 7

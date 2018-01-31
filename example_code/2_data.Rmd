@@ -1,0 +1,197 @@
+---
+title: "1st Year Paper Presentation (Data)"
+author: "Charles Zhang"
+date: "January 26, 2018"
+output: beamer_presentation
+---
+
+```{r, include=FALSE, message=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(knitr)
+library(magrittr)
+```
+
+# Empirical Context
+
+## EXAMPLE: Search Engine Results Page (SERP)
+
+```{r, fig.align='center'}
+include_graphics("images/cropped_flowers and chocolate_screenshot.png")
+```
+
+## EXAMPLE: SERP, Elements Highlighted
+
+```{r, fig.align='center'}
+include_graphics("images/cropped_flowers and chocolate_boxed.png")
+```
+
+## Abstract Representation of SERP
+
+\begincols
+  \begincol{.48\textwidth}
+  
+```{r, fig.align='center'}
+include_graphics("images/Mockup_ Control - Page 1.png")
+```
+
+  \endcol
+  \begincol{.48\textwidth}
+
+**4 Types of Links**
+
+- Ads
+- Organic Results
+- Refinements
+- Other Exits
+
+  \endcol
+\endcols
+
+
+## Detailed Link Hierarchy
+
+- Each type of link can be subclassified
+- Every link on the page is categorized
+
+\noindent\rule{\textwidth}{1pt}
+
+\begincols[T]
+  \begincol{.48\textwidth}
+  
+**Ads**
+
+- North Ads
+- East Ads
+- South Ads
+- PLA Ads
+
+**Organic Results**
+
+- Search Results
+- Augmented Search Results
+    
+  \endcol
+\begincol{.48\textwidth}
+
+**Refinements**
+
+*(Links leading to another SERP.)*
+
+- Re-query
+- Pivot
+- Pagination
+- Related Searches
+
+**Other Exits**
+    
+  \endcol
+\endcols
+
+## Measurement of Search Behavior
+
+- Link categories are **mutually exclusive**
+- Clicks can also be categorized by link categories
+    - e.g., ad clicks, organic clicks
+- On any SERP, we can count:
+    - the number of each type of links (environment)
+    - the click(s) that occurred (outcomes)
+
+# Experiment Overview
+
+## Experiment Parameters
+
+- **Population:** Desktop Search Engine Users, US
+- **Experimental Period**: ~1.5 months (in 2017)
+- **Sample Size**: 3.7m cookies
+
+\input{./tables/desc_sample.tex}
+
+## Randomized 50/50 at the cookie level
+
+- Hash function maps cookie identifier to a range of values
+    - e.g., $\{1,2,...,10\}$
+- Range of values is mapped to treatment / control
+    - e.g., $\{1,2,3\} \rightarrow Treatment$
+    - e.g., $\{4,5,6\} \rightarrow Control$
+    - Randomization holds if cookie is persistent
+
+## Manipulation: Reduces # of North Ads
+
+- **Manipulation**: Increase North Ad **threshold values**
+    - Ads get assigned a score (function of bid and quality)
+    - Threshold values determine which ads are in North and which are in East
+    - $\Uparrow$ threshold values $\rightarrow$ $\Downarrow$ North Ads
+- Manipulation chosen to get **~13% reduction in North Ads**
+
+## Manipulation: Changes Multiple Things
+
+- Manipulation changes more than just the # of North Ads
+
+```{r, fig.align='center'}
+include_graphics("images/Mockup_ Condition.svg")
+```
+
+# Descriptives
+
+## Average SERP: Not Every SERP has Ads
+
+\input{./tables/desc_SERP.tex}
+  
+## Clicking Behavior: ~10% of clicks are ad clicks
+
+\input{./tables/desc_search_outcomes.tex}
+
+## Ad Clicking: >85% of Ad Clicks on North Ads
+
+\input{./tables/desc_search_outcomes_ad.tex}
+
+## Cookies Age: Some Persistence
+
+\begincols
+  \begincol{.48\textwidth}
+
+- Average Age: ~ 120 days
+- ~75% have age > 7 days
+- ~35% have age > 30 days
+
+  \endcol
+  \begincol{.48\textwidth}
+
+```{r, fig.align='center'}
+include_graphics("images/CookieCreationDate.png")
+```
+
+  \endcol
+\endcols
+
+# Experimental Validation
+
+## Manipulation Check: $\Downarrow$ North Ads, $\Uparrow$ East Ads
+
+```{r}
+include_graphics("images/Manipulation_Slide.png")
+```
+
+## MC: Users' First Search During Experiment
+
+- Average Treated SERP: -16% North Ads, +8% East Ads
+- Small changes in South Ads and Organic Results (~.5%)
+
+\input{./tables/manipulation_check.tex}
+
+## Randomization Check: Probably Correct
+
+\begincols
+  \begincol{.48\textwidth}
+
+\input{./tables/randomization_check_joint1.tex}
+
+  \endcol
+  \begincol{.48\textwidth}
+
+\input{./tables/randomization_check_joint2.tex}
+
+- Try to use pre-experiment behavior to predict treatment assignment
+
+  \endcol
+\endcols

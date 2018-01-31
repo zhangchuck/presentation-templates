@@ -1,0 +1,24 @@
+---
+title: "The Effect of Advertising on Search Behavior"
+author: "Charles Zhang"
+date: "January 26, 2018"
+output: beamer_presentation
+---
+
+```{r, include=FALSE, message=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(knitr)
+library(magrittr)
+```
+
+```{r child='1_intro.Rmd', eval=T}
+```
+
+```{r child='2_data.Rmd', eval=T}
+```
+
+```{r child='3_results.Rmd', eval=T}
+```
+
+```{r child='4_appendix.Rmd', eval=T}
+```
